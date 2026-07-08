@@ -675,7 +675,7 @@ nav {
     }
 
     .logo-img {
-        height: 64px;
+        height: 80px;
     }
 
     nav {
@@ -696,8 +696,8 @@ nav {
     }
 
     header {
-        justify-content: center;
-        padding: 1rem;
+        justify-content: space-between;
+        padding: 0px 5%;
     }
 
     .stats-container {
