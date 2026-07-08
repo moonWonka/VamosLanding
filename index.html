@@ -151,7 +151,7 @@
                                 <i class="fa-solid fa-phone"></i>
                                 <div>
                                     <h4>Teléfono</h4>
-                                    <p>+56 9 83480334</p>
+                                    <p>+56 9 87663079</p>
                                 </div>
                             </div>
                             <div class="info-item">
@@ -175,7 +175,15 @@
                             <h3 style="color: var(--primary); font-size: 1.8rem; margin-bottom: 0.5rem;">Solicite una Cotización</h3>
                             <p style="color: var(--text-muted); font-size: 1rem;">Complete sus datos y nos pondremos en contacto a la brevedad para evaluar sus necesidades operativas.</p>
                         </div>
-                        <form class="contact-form" action="#" method="POST">
+                        <form class="contact-form" id="cotizacion-form">
+                            <!-- Input oculto para la clave de acceso de Web3Forms -->
+                            <input type="hidden" name="access_key" id="web3forms-key" value="86981056-5f19-4ba1-8c93-e3355c6ea20a">
+                            
+                            <!-- Opcional: Personalizar el asunto del correo que te llegará -->
+                            <input type="hidden" name="subject" value="Nueva Cotización desde Vamos Transfer">
+                            <!-- Opcional: Remitente o nombre de la app -->
+                            <input type="hidden" name="from_name" value="Vamos Transfer Landing">
+
                             <div class="form-group">
                                 <input type="text" id="empresa" name="empresa" placeholder=" " required>
                                 <label for="empresa">Nombre de la Empresa</label>
@@ -197,10 +205,11 @@
                                 <textarea id="mensaje" name="mensaje" placeholder=" " required style="width: 100%; padding: 1.2rem 1rem 0.5rem; border: 2px solid #e2e8f0; border-radius: 8px; font-size: 1rem; font-family: inherit; background: transparent; transition: border-color 0.3s ease; color: var(--text-main); resize: vertical; min-height: 100px;"></textarea>
                                 <label for="mensaje" style="top: 1.5rem;">Mensaje / Requerimientos</label>
                             </div>
-                            <button type="submit" class="submit-btn">
+                            <button type="submit" class="submit-btn" id="submit-btn">
                                 <span>Enviar Requerimiento</span>
                                 <i class="fa-solid fa-arrow-right"></i>
                             </button>
+                            <div id="form-result" style="margin-top: 1.5rem; padding: 1rem; border-radius: 8px; font-size: 1rem; font-weight: 500; text-align: center; display: none;"></div>
                         </form>
                     </div>
                 </div>
@@ -212,7 +221,7 @@
         <p>&copy; 2026 VAMOS TRANSFER AyC Socios. Todos los derechos reservados.</p>
     </footer>
 
-    <a href="https://wa.me/56983480334?text=Hola,%20quisiera%20información%20sobre%20los%20servicios%20de%20traslado%20corporativo." class="whatsapp-float" target="_blank">
+    <a href="https://wa.me/56987663079?text=Hola,%20quisiera%20información%20sobre%20los%20servicios%20de%20traslado%20corporativo." class="whatsapp-float" target="_blank">
         <i class="fa-brands fa-whatsapp"></i>
     </a>
 

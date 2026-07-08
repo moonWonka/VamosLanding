@@ -96,4 +96,73 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
+
+    // 4. Envío de Formulario por Web3Forms con AJAX (fetch)
+    const cotizacionForm = document.getElementById('cotizacion-form');
+    const formResult = document.getElementById('form-result');
+    const submitBtn = document.getElementById('submit-btn');
+
+    if (cotizacionForm && formResult && submitBtn) {
+        cotizacionForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            // Evitar envíos duplicados mientras se procesa
+            submitBtn.disabled = true;
+            const originalBtnText = submitBtn.innerHTML;
+            submitBtn.innerHTML = `<span>Enviando...</span> <i class="fa-solid fa-spinner fa-spin"></i>`;
+
+            // Mostrar estado de carga inicial en la alerta
+            formResult.style.display = "block";
+            formResult.style.backgroundColor = "#e2e8f0";
+            formResult.style.color = "#334155";
+            formResult.style.border = "1px solid #cbd5e1";
+            formResult.textContent = "Procesando su solicitud...";
+
+            const formData = new FormData(cotizacionForm);
+
+            fetch('https://api.web3forms.com/submit', {
+                method: 'POST',
+                headers: {
+                    'Accept': 'application/json'
+                },
+                body: formData
+            })
+            .then(async (response) => {
+                let json = await response.json();
+                if (response.status == 200) {
+                    // Éxito
+                    formResult.style.backgroundColor = "#d1e7dd";
+                    formResult.style.color = "#0f5132";
+                    formResult.style.border = "1px solid #badbcc";
+                    formResult.innerHTML = "<strong>✓ ¡Enviado con éxito!</strong> Nos pondremos en contacto a la brevedad.";
+                    cotizacionForm.reset();
+                } else {
+                    // Error de la API de Web3Forms (ej. clave inválida)
+                    console.log(response);
+                    formResult.style.backgroundColor = "#f8d7da";
+                    formResult.style.color = "#842029";
+                    formResult.style.border = "1px solid #f5c2c7";
+                    formResult.innerHTML = `<strong>⚠️ Error al enviar:</strong> ${json.message || "Por favor intente nuevamente."}`;
+                }
+            })
+            .catch(error => {
+                // Error de red
+                console.log(error);
+                formResult.style.backgroundColor = "#f8d7da";
+                formResult.style.color = "#842029";
+                formResult.style.border = "1px solid #f5c2c7";
+                formResult.innerHTML = "<strong>⚠️ Error de conexión:</strong> No pudimos conectar con el servidor. Inténtelo más tarde.";
+            })
+            .then(() => {
+                // Restaurar botón
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = originalBtnText;
+                
+                // Ocultar el mensaje automáticamente después de 6 segundos
+                setTimeout(() => {
+                    formResult.style.display = "none";
+                }, 6000);
+            });
+        });
+    }
 });
