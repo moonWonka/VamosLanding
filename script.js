@@ -54,19 +54,42 @@ document.addEventListener('DOMContentLoaded', () => {
         revealObserver.observe(element);
     });
 
-    // 3. Menú móvil (ocultar al hacer click si es necesario)
-    // El diseño actual en móvil coloca los links abajo, por lo que el click
-    // naturalmente lleva a la sección gracias al smooth scroll de CSS.
-    // Solo aseguramos el comportamiento suave.
+    // 3. Menú móvil toggle y cierre automático
+    const menuToggle = document.getElementById('menu-toggle');
+    const navMenu = document.getElementById('nav-menu');
+
+    if (menuToggle && navMenu) {
+        menuToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            
+            // Opcional: animar el ícono de hamburguesa
+            const icon = menuToggle.querySelector('i');
+            if (icon.classList.contains('fa-bars')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-xmark');
+            } else {
+                icon.classList.remove('fa-xmark');
+                icon.classList.add('fa-bars');
+            }
+        });
+    }
+
     navLinks.forEach(link => {
         link.addEventListener('click', function(e) {
-            // El scroll suave ya está manejado por el CSS 'scroll-behavior: smooth' en el html.
-            // Esto es solo un respaldo si quisieramos controlar el offset del header de forma estricta por JS
+            // Cerrar menú móvil al hacer click
+            if (navMenu && navMenu.classList.contains('active')) {
+                navMenu.classList.remove('active');
+                if (menuToggle) {
+                    const icon = menuToggle.querySelector('i');
+                    icon.classList.remove('fa-xmark');
+                    icon.classList.add('fa-bars');
+                }
+            }
+
             const targetId = this.getAttribute('href');
             if (targetId.startsWith('#')) {
                 const targetElement = document.querySelector(targetId);
                 if (targetElement) {
-                    // Remover active de todos rápidamente al hacer click
                     navLinks.forEach(l => l.classList.remove('active'));
                     this.classList.add('active');
                 }
