@@ -558,7 +558,8 @@ nav {
 }
 
 .contact-form input,
-.contact-form select {
+.contact-form select,
+.contact-form textarea {
     width: 100%;
     padding: 1.2rem 1rem 0.5rem;
     border: 2px solid #e2e8f0;
@@ -570,8 +571,15 @@ nav {
     color: var(--text-main);
 }
 
+.contact-form textarea {
+    resize: vertical;
+    min-height: 120px;
+    padding-top: 1.6rem;
+}
+
 .contact-form input:focus,
-.contact-form select:focus {
+.contact-form select:focus,
+.contact-form textarea:focus {
     outline: none;
     border-color: var(--secondary);
 }
@@ -587,12 +595,21 @@ nav {
     font-size: 1rem;
 }
 
+/* Alinear el label al inicio en el textarea ya que es más alto */
+.contact-form textarea ~ label {
+    top: 1.2rem;
+    transform: none;
+}
+
 .contact-form input:focus~label,
-.contact-form input:not(:placeholder-shown)~label {
-    top: 0.5rem;
+.contact-form input:not(:placeholder-shown)~label,
+.contact-form textarea:focus~label,
+.contact-form textarea:not(:placeholder-shown)~label {
+    top: 0.4rem;
     font-size: 0.75rem;
     color: var(--secondary);
     font-weight: 600;
+    transform: translateY(0);
 }
 
 .contact-form select:focus~.select-label,
