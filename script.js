@@ -102,6 +102,79 @@ document.addEventListener('DOMContentLoaded', () => {
     const formResult = document.getElementById('form-result');
     const submitBtn = document.getElementById('submit-btn');
 
+    // Coin flip overlay elements
+    const coinOverlay = document.getElementById('coin-overlay');
+    const coinElement = document.querySelector('.coin');
+    const coinCloseBtn = document.getElementById('coin-close-btn');
+    const coinSound = document.getElementById('coin-sound');
+
+    /**
+     * Muestra el overlay con la animación de moneda y reproduce el sonido.
+     */
+    function showCoinAnimation() {
+        // Resetear estados previos
+        coinElement.classList.remove('spinning', 'landed');
+
+        // Activar overlay
+        coinOverlay.classList.add('active');
+
+        // Reproducir sonido de moneda
+        if (coinSound) {
+            coinSound.currentTime = 0;
+            coinSound.play().catch(() => {
+                // Autoplay bloqueado por el navegador, ignorar silenciosamente
+            });
+        }
+
+        // Iniciar giro de moneda con un pequeño delay para que el overlay se vea primero
+        requestAnimationFrame(() => {
+            coinElement.classList.add('spinning');
+        });
+
+        // Después de que termine la animación de giro, agregar efecto de brillo pulsante
+        setTimeout(() => {
+            coinElement.classList.remove('spinning');
+            coinElement.classList.add('landed');
+        }, 2100);
+    }
+
+    /**
+     * Cierra el overlay y resetea la animación.
+     */
+    function closeCoinOverlay() {
+        coinOverlay.classList.remove('active');
+
+        // Resetear todo después de que termine la transición de cierre
+        setTimeout(() => {
+            coinElement.classList.remove('spinning', 'landed');
+            if (coinSound) {
+                coinSound.pause();
+                coinSound.currentTime = 0;
+            }
+        }, 400);
+    }
+
+    // Event listener para cerrar el overlay
+    if (coinCloseBtn) {
+        coinCloseBtn.addEventListener('click', closeCoinOverlay);
+    }
+
+    // Cerrar al hacer click fuera del contenido
+    if (coinOverlay) {
+        coinOverlay.addEventListener('click', (e) => {
+            if (e.target === coinOverlay) {
+                closeCoinOverlay();
+            }
+        });
+    }
+
+    // Cerrar con tecla Escape
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && coinOverlay && coinOverlay.classList.contains('active')) {
+            closeCoinOverlay();
+        }
+    });
+
     if (cotizacionForm && formResult && submitBtn) {
         cotizacionForm.addEventListener('submit', function(e) {
             e.preventDefault();
@@ -130,12 +203,10 @@ document.addEventListener('DOMContentLoaded', () => {
             .then(async (response) => {
                 let json = await response.json();
                 if (response.status == 200) {
-                    // Éxito
-                    formResult.style.backgroundColor = "#d1e7dd";
-                    formResult.style.color = "#0f5132";
-                    formResult.style.border = "1px solid #badbcc";
-                    formResult.innerHTML = "<strong>✓ ¡Enviado con éxito!</strong> Nos pondremos en contacto a la brevedad.";
+                    // Éxito — ocultar mensaje de texto y mostrar animación de moneda
+                    formResult.style.display = "none";
                     cotizacionForm.reset();
+                    showCoinAnimation();
                 } else {
                     // Error de la API de Web3Forms (ej. clave inválida)
                     console.log(response);
@@ -158,7 +229,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 submitBtn.disabled = false;
                 submitBtn.innerHTML = originalBtnText;
                 
-                // Ocultar el mensaje automáticamente después de 6 segundos
+                // Ocultar el mensaje de error automáticamente después de 6 segundos
                 setTimeout(() => {
                     formResult.style.display = "none";
                 }, 6000);

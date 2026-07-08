@@ -245,6 +245,35 @@
         <i class="fa-brands fa-whatsapp"></i>
     </a>
 
+    <!-- Overlay de éxito con animación de moneda -->
+    <div id="coin-overlay" class="coin-overlay">
+        <div class="coin-overlay-content">
+            <div class="coin-container">
+                <div class="coin">
+                    <div class="coin-front">
+                        <img src="Images/anima 2.0.png" alt="Enviado con éxito" class="coin-img">
+                    </div>
+                    <div class="coin-back">
+                        <img src="Images/anima 2.0.png" alt="Enviado con éxito" class="coin-img">
+                    </div>
+                </div>
+            </div>
+            <div class="coin-success-text">
+                <h3>¡Mensaje Enviado!</h3>
+                <p>Nos pondremos en contacto a la brevedad.</p>
+            </div>
+            <button class="coin-close-btn" id="coin-close-btn">
+                <span>Continuar</span>
+                <i class="fa-solid fa-arrow-right"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- Audio efecto moneda -->
+    <audio id="coin-sound" preload="auto">
+        <source src="Music/chieuk-coin-257878.mp3" type="audio/mpeg">
+    </audio>
+
     <script src="script.js"></script>
 </body>
 
