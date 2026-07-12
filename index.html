@@ -250,6 +250,10 @@
         <i class="fa-brands fa-facebook-f"></i>
     </a>
 
+    <button class="music-float" id="music-toggle" type="button" aria-label="Activar o pausar música de fondo">
+        <i class="fa-solid fa-volume-high"></i>
+    </button>
+
     <!-- Overlay de éxito con animación de moneda -->
     <div id="coin-overlay" class="coin-overlay">
         <div class="coin-overlay-content">
@@ -277,6 +281,11 @@
     <!-- Audio efecto moneda -->
     <audio id="coin-sound" preload="auto">
         <source src="Music/chieuk-coin-257878.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- Música de entrada / fondo -->
+    <audio id="page-audio" preload="auto" autoplay loop>
+        <source src="Music/clavier-music-calm.mp3" type="audio/mpeg">
     </audio>
 
     <script src="script.js"></script>

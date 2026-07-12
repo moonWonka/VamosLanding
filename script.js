@@ -107,6 +107,74 @@ document.addEventListener('DOMContentLoaded', () => {
     const coinElement = document.querySelector('.coin');
     const coinCloseBtn = document.getElementById('coin-close-btn');
     const coinSound = document.getElementById('coin-sound');
+    const pageAudio = document.getElementById('page-audio');
+    const musicToggle = document.getElementById('music-toggle');
+
+    function updateMusicButton(isPlaying) {
+        if (!musicToggle) {
+            return;
+        }
+
+        const icon = musicToggle.querySelector('i');
+        if (icon) {
+            icon.classList.toggle('fa-volume-high', isPlaying);
+            icon.classList.toggle('fa-volume-xmark', !isPlaying);
+        }
+
+        musicToggle.setAttribute(
+            'aria-label',
+            isPlaying ? 'Pausar música de fondo' : 'Activar música de fondo'
+        );
+    }
+
+    function tryPlayPageAudio() {
+        if (!pageAudio) {
+            return;
+        }
+
+        pageAudio.volume = 0.35;
+        const playResult = pageAudio.play();
+
+        if (playResult && typeof playResult.catch === 'function') {
+            playResult.catch(() => {
+                updateMusicButton(false);
+            });
+        }
+
+        updateMusicButton(!pageAudio.paused);
+    }
+
+    if (pageAudio) {
+        tryPlayPageAudio();
+
+        const resumeAudio = () => {
+            if (pageAudio.paused) {
+                tryPlayPageAudio();
+            }
+        };
+
+        document.addEventListener('pointerdown', resumeAudio, { once: true });
+        document.addEventListener('touchstart', resumeAudio, { once: true });
+        document.addEventListener('keydown', resumeAudio, { once: true });
+    }
+
+    if (musicToggle && pageAudio) {
+        musicToggle.addEventListener('click', () => {
+            if (pageAudio.paused) {
+                pageAudio.play().catch(() => {
+                    // Si el navegador bloquea la reproducción, se mantiene el botón disponible.
+                });
+            } else {
+                pageAudio.pause();
+            }
+
+            updateMusicButton(!pageAudio.paused);
+        });
+
+        pageAudio.addEventListener('play', () => updateMusicButton(true));
+        pageAudio.addEventListener('pause', () => updateMusicButton(false));
+        updateMusicButton(!pageAudio.paused);
+    }
 
     /**
      * Muestra el overlay con la animación de moneda y reproduce el sonido.
