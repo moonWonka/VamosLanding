@@ -678,6 +678,32 @@ nav {
     box-shadow: 0 15px 30px rgba(37, 211, 102, 0.3);
 }
 
+/* Botón Flotante Facebook */
+.facebook-float {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    bottom: 110px;
+    right: 40px;
+    background-color: #1877f2;
+    color: #fff;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 32px;
+    box-shadow: var(--shadow-lg);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.facebook-float:hover {
+    transform: scale(1.1) rotate(5deg);
+    box-shadow: 0 15px 30px rgba(24, 119, 242, 0.3);
+}
+
 /* Responsive */
 @media (max-width: 992px) {
     .contact-card {
@@ -782,6 +808,11 @@ nav {
 
     .whatsapp-float {
         bottom: 30px;
+        right: 20px;
+    }
+
+    .facebook-float {
+        bottom: 100px;
         right: 20px;
     }
 }
