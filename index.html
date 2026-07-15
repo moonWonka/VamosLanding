@@ -4,7 +4,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VAMOS TRANSFER AyC Socios | Logística Aeroportuaria</title>
+    <title>VAMOS TRANSFER AyC Socios | Transporte Aeroportuario Santiago</title>
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="VAMOS TRANSFER AyC Socios: Especialistas en transporte corporativo y traslado de tripulaciones en el Aeropuerto de Santiago de Chile (Pudahuel). Servicio confiable 24/7 con cumplimiento MTT.">
+    <meta name="keywords" content="transporte aeroportuario, traslado de tripulaciones, transfer corporativo santiago, transporte de personal aeropuerto santiago, pudahuel, ayc socios, vamos transfer, transporte de pasajeros chile">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="VAMOS TRANSFER AyC Socios">
+    <link rel="canonical" href="https://aycvamos.cl/">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://aycvamos.cl/">
+    <meta property="og:title" content="VAMOS TRANSFER AyC Socios | Transporte Aeroportuario Santiago">
+    <meta property="og:description" content="Especialistas en transporte corporativo y traslado de tripulaciones en el Aeropuerto de Santiago de Chile. Servicio de alta puntualidad y cumplimiento normativo MTT.">
+    <meta property="og:image" content="https://aycvamos.cl/Images/trasporte.webp">
+    <meta property="og:locale" content="es_CL">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://aycvamos.cl/">
+    <meta property="twitter:title" content="VAMOS TRANSFER AyC Socios | Transporte Aeroportuario Santiago">
+    <meta property="twitter:description" content="Especialistas en transporte corporativo y traslado de tripulaciones en el Aeropuerto de Santiago de Chile. Servicio de alta puntualidad y cumplimiento normativo MTT.">
+    <meta property="twitter:image" content="https://aycvamos.cl/Images/trasporte.webp">
 
     <!-- Google Fonts: Inter -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -15,6 +37,66 @@
     <link rel="icon" type="image/png" href="Images/icono-van-trasparente.png">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Schema.org JSON-LD Structured Data for Local Business & Transportation Service -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "LocalBusiness",
+          "@id": "https://aycvamos.cl/#business",
+          "name": "VAMOS TRANSFER AyC Socios",
+          "image": "https://aycvamos.cl/Images/logoVamostransparente.png",
+          "telephone": "+56987663079",
+          "email": "ayc.socios@gmail.com",
+          "url": "https://aycvamos.cl/",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Osvaldo Croquevielle 2207, Oficina 436",
+            "addressLocality": "Pudahuel",
+            "addressRegion": "Santiago",
+            "postalCode": "9020000",
+            "addressCountry": "CL"
+          },
+          "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": -33.427618,
+            "longitude": -70.793751
+          },
+          "areaServed": [
+            {
+              "@type": "AdministrativeArea",
+              "name": "Santiago"
+            },
+            {
+              "@type": "AdministrativeArea",
+              "name": "Pudahuel"
+            },
+            {
+              "@type": "Airport",
+              "name": "Aeropuerto Internacional Arturo Merino Benítez",
+              "iataCode": "SCL"
+            }
+          ]
+        },
+        {
+          "@type": "TransportationService",
+          "@id": "https://aycvamos.cl/#service",
+          "provider": {
+            "@id": "https://aycvamos.cl/#business"
+          },
+          "name": "Traslado de Tripulaciones y Transporte Corporativo Aeroportuario",
+          "description": "Servicio de transporte privado especializado en el traslado de tripulaciones de aerolíneas, personal de mantenimiento y carga en el Aeropuerto de Santiago de Chile (Pudahuel).",
+          "areaServed": "Santiago Metropolitan Region",
+          "offers": {
+            "@type": "Offer",
+            "url": "https://aycvamos.cl/#contacto"
+          }
+        }
+      ]
+    }
+    </script>
 </head>
 
 <body>
@@ -25,14 +107,14 @@
                 <img src="Images/logoVamostransparente.png" alt="VAMOS TRANSFER AyC Socios" class="logo-img">
             </a>
         </div>
-        <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menú">
+        <button class="menu-toggle" id="menu-toggle" type="button" aria-label="Abrir menú">
             <i class="fa-solid fa-bars"></i>
         </button>
         <nav id="nav-menu">
             <a href="#inicio" class="nav-link active">Inicio</a>
             <a href="#nosotros" class="nav-link">Quiénes Somos</a>
             <a href="#servicios" class="nav-link">Servicios</a>
-            <a href="#contacto" class="nav-link">Empresa & Contacto</a>
+            <a href="#contacto" class="nav-link">Empresa &amp; Contacto</a>
         </nav>
     </header>
 
@@ -41,15 +123,14 @@
         <section id="inicio" class="page-section scroll-reveal">
             <div class="hero">
                 <div class="hero-text">
-                    <h2>Confiabilidad en cada kilómetro</h2>
-                    <p>Especialistas en logística y transporte aeroportuario. Movilizamos a más de 9.000 trabajadores al
-                        mes con precisión, seguridad y cumplimiento normativo.</p>
+                    <h1>Transporte Aeroportuario en Santiago | VAMOS TRANSFER</h1>
+                    <p>Confiabilidad en cada kilómetro. Especialistas en traslado de tripulaciones y transporte corporativo en el Aeropuerto Arturo Merino Benítez de Santiago de Chile (Pudahuel). Movilizamos a más de 9.000 trabajadores al mes con máxima puntualidad, seguridad y total cumplimiento normativo MTT.</p>
                     <a href="#contacto" class="cta-button">Cotizar Servicio Corporativo</a>
                 </div>
             </div>
 
             <div class="trust-banner">
-                <h3>El aliado logístico de grandes operadores</h3>
+                <h2>El aliado logístico de grandes operadores en Pudahuel y Santiago</h2>
                 <div class="stats-container">
                     <div class="stat">
                         <span class="stat-number">9</span>
@@ -70,31 +151,29 @@
         <!-- SECCIÓN QUIÉNES SOMOS / VISIÓN -->
         <section id="nosotros" class="page-section scroll-reveal nosotros-section">
             <div class="nosotros-container">
-                <h2 class="nosotros-title">Quiénes Somos</h2>
+                <h2 class="nosotros-title">Quiénes Somos | Especialistas en Traslado de Pasajeros</h2>
                 <p class="nosotros-text">
-                    Somos una empresa dedicada al rubro del transporte de pasajeros, con amplia experiencia en servicios
-                    de traslado, destacando especialmente en operaciones de transporte en aeropuerto.
+                    En <strong>VAMOS TRANSFER AyC Socios</strong>, somos una empresa líder dedicada al rubro del transporte privado de pasajeros. Contamos con una amplia trayectoria en servicios de traslado corporativo, destacando de manera especial en las operaciones de transporte terrestre en el Aeropuerto de Santiago de Chile. Ofrecemos soluciones integrales y eficientes para empresas que requieren movilizar a su capital humano de manera segura y puntual.
                 </p>
-                <h3 class="nosotros-subtitle">Nuestro compromiso se refleja en:</h3>
+                <h3 class="nosotros-subtitle">Nuestro compromiso en transporte de personal y transfer de pasajeros se refleja en:</h3>
 
                 <div class="compromiso-grid">
                     <div class="compromiso-card">
-                        <i class="fa-solid fa-handshake-angle card-icon-animated"></i>
+                        <i class="fa-solid fa-handshake-angle card-icon-animated" aria-hidden="true"></i>
                         <p class="card-text">
-                            <strong>Excelencia en la atención:</strong> un trato cordial y cercano con cada pasajero.
+                            <strong>Excelencia en la atención:</strong> un trato cordial, profesional y cercano en cada traslado de pasajeros.
                         </p>
                     </div>
                     <div class="compromiso-card">
-                        <i class="fa-solid fa-clock-rotate-left card-icon-animated"></i>
+                        <i class="fa-solid fa-clock-rotate-left card-icon-animated" aria-hidden="true"></i>
                         <p class="card-text">
-                            <strong>Puntualidad y responsabilidad</strong> en cada servicio.
+                            <strong>Puntualidad y responsabilidad:</strong> rigurosidad en los tiempos y sincronización exacta con itinerarios de vuelos.
                         </p>
                     </div>
                     <div class="compromiso-card">
-                        <i class="fa-solid fa-van-shuttle card-icon-animated"></i>
+                        <i class="fa-solid fa-van-shuttle card-icon-animated" aria-hidden="true"></i>
                         <p class="card-text">
-                            <strong>Móviles con capacidad y equipamiento necesario</strong> para dar un buen servicio,
-                            cumpliendo con todas las normativas vigentes.
+                            <strong>Flota moderna y autorizada:</strong> móviles con capacidad, confort y equipamiento necesario para dar el mejor servicio de transfer, cumpliendo 100% con todas las normativas del Ministerio de Transportes y Telecomunicaciones (MTT).
                         </p>
                     </div>
                 </div>
@@ -105,35 +184,31 @@
         <section id="servicios" class="page-section scroll-reveal">
             <div class="services-section">
                 <div class="section-header">
-                    <h2>Soluciones de Transporte Aeroportuario</h2>
-                    <p class="subtitle">Optimizamos la movilidad de su equipo en todas las áreas del aeropuerto.</p>
+                    <h2>Servicios de Transfer y Transporte Aeroportuario en Santiago</h2>
+                    <p class="subtitle">Optimizamos la movilidad de su equipo y tripulación en todas las áreas del Aeropuerto de Santiago de Chile (AMB).</p>
                 </div>
 
                 <div class="features-grid">
                     <div class="card">
                         <div class="card-icon">
-                            <i class="fa-solid fa-plane-departure"></i>
+                            <i class="fa-solid fa-plane-departure" aria-hidden="true"></i>
                         </div>
-                        <h3>Tripulaciones y Aerolíneas</h3>
-                        <p>Traslados exactos y sincronizados con los itinerarios de vuelo para pilotos y tripulación de
-                            cabina, garantizando el descanso y la puntualidad operativa.</p>
+                        <h3>Traslado de Tripulaciones y Aerolíneas</h3>
+                        <p>Traslados exactos y perfectamente sincronizados con los itinerarios de vuelo para pilotos, copilotos y tripulación de cabina, garantizando el máximo descanso y puntualidad operativa en el Aeropuerto de Pudahuel.</p>
                     </div>
                     <div class="card">
                         <div class="card-icon">
-                            <img src="Images/icono-van-trasparente.png" alt="Van de Transporte"
-                                style="width: 45px; height: 45px; object-fit: contain; filter: drop-shadow(0 4px 6px rgba(0,0,0,0.1));">
+                            <img src="Images/icono-van-trasparente.png" alt="Van para transporte aeroportuario de personal" class="card-icon-img">
                         </div>
-                        <h3>Personal de Carga y Mantenimiento</h3>
-                        <p>Rutas dinámicas adaptadas a los sistemas de turnos rotativos, recogidas y zarpes desde el
-                            hogar hasta las instalaciones aeroportuarias.</p>
+                        <h3>Transporte de Personal de Carga y Mantenimiento</h3>
+                        <p>Diseño de rutas dinámicas adaptadas a los exigentes sistemas de turnos rotativos (24/7). Coordinamos recogidas y zarpes desde el hogar del trabajador hasta las instalaciones aeroportuarias.</p>
                     </div>
                     <div class="card">
                         <div class="card-icon">
-                            <i class="fa-solid fa-satellite-dish"></i>
+                            <i class="fa-solid fa-satellite-dish" aria-hidden="true"></i>
                         </div>
-                        <h3>Monitoreo y Trazabilidad</h3>
-                        <p>Vehículos controlados por GPS, control de jornada laboral y reportes de cumplimiento para
-                            integrarse a la gestión de RRHH de su empresa.</p>
+                        <h3>Monitoreo GPS y Trazabilidad de Rutas</h3>
+                        <p>Vehículos monitoreados por GPS en tiempo real, riguroso control de jornada laboral y reportes automáticos de cumplimiento para integrarse a la gestión de RRHH y operaciones de su empresa.</p>
                     </div>
                 </div>
             </div>
@@ -145,27 +220,27 @@
                 <div class="contact-card">
                     <div class="contact-info-panel">
                         <div class="contact-header-text">
-                            <h2>Conecte con AyC Socios</h2>
-                            <p>¿Necesita optimizar los traslados de su personal aeroportuario? Hablemos.</p>
+                            <h2>Contacto VAMOS TRANSFER | AyC Socios</h2>
+                            <p>¿Necesita optimizar los traslados de su personal aeroportuario en Pudahuel o Santiago? Hablemos.</p>
                         </div>
 
                         <div class="info-list">
                             <div class="info-item">
-                                <i class="fa-solid fa-location-dot"></i>
+                                <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
                                 <div>
-                                    <h4>Ubicación</h4>
-                                    <p>Osvaldo Croquevielle 2207, Oficina 436, Pudahuel, Santiago.</p>
+                                    <h4>Ubicación Comercial</h4>
+                                    <p>Osvaldo Croquevielle 2207, Oficina 436, Pudahuel, Santiago, Chile.</p>
                                 </div>
                             </div>
                             <div class="info-item">
-                                <i class="fa-solid fa-phone"></i>
+                                <i class="fa-solid fa-phone" aria-hidden="true"></i>
                                 <div>
-                                    <h4>Teléfono</h4>
+                                    <h4>Teléfono de Contacto</h4>
                                     <p>+56 9 87663079</p>
                                 </div>
                             </div>
                             <div class="info-item">
-                                <i class="fa-solid fa-envelope"></i>
+                                <i class="fa-solid fa-envelope" aria-hidden="true"></i>
                                 <div>
                                     <h4>Correo Electrónico</h4>
                                     <p>ayc.socios@gmail.com</p>
@@ -173,11 +248,11 @@
                             </div>
                         </div>
 
-                        <div class="map-container"
-                            style="margin-top: 2rem; border-radius: 12px; overflow: hidden; box-shadow: var(--shadow-md);">
+                        <div class="map-container">
                             <iframe
+                                title="Ubicación de VAMOS TRANSFER en Pudahuel, Santiago"
                                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3329.3541460367355!2d-70.7937517242867!3d-33.42761807339891!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9662c226e6d1eb97%3A0xc33e50cd8cb95b12!2sOsvaldo%20Croquevielle%202207%2C%20Pudahuel%2C%20Regi%C3%B3n%20Metropolitana!5e0!3m2!1ses-419!2scl!4v1700000000000!5m2!1ses-419!2scl"
-                                width="100%" height="220" style="border:0; display: block;" allowfullscreen=""
+                                width="600" height="220" allowfullscreen=""
                                 loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                         </div>
                     </div>
@@ -185,11 +260,9 @@
                     <div class="contact-form-panel">
                         <!-- Añadir formspree u otro servicio para que funcione el envío de correo -->
                         <!-- Ejemplo con Formspree: <form action="https://formspree.io/f/TU_CODIGO" method="POST" class="contact-form"> -->
-                        <div class="form-header" style="margin-bottom: 2.5rem;">
-                            <h3 style="color: var(--primary); font-size: 1.8rem; margin-bottom: 0.5rem;">Solicite una
-                                Cotización</h3>
-                            <p style="color: var(--text-muted); font-size: 1rem;">Complete sus datos y nos pondremos en
-                                contacto a la brevedad para evaluar sus necesidades operativas.</p>
+                        <div class="form-header">
+                            <h3>Solicite una Cotización</h3>
+                            <p>Complete sus datos y nos pondremos en contacto a la brevedad para evaluar sus necesidades operativas.</p>
                         </div>
                         <form class="contact-form" id="cotizacion-form" action="https://api.web3forms.com/submit" method="POST">
                             <!-- Input oculto para la clave de acceso de Web3Forms -->
@@ -224,11 +297,9 @@
                             </div>
                             <button type="submit" class="submit-btn" id="submit-btn">
                                 <span>Enviar Requerimiento</span>
-                                <i class="fa-solid fa-arrow-right"></i>
+                                <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
                             </button>
-                            <div id="form-result"
-                                style="margin-top: 1.5rem; padding: 1rem; border-radius: 8px; font-size: 1rem; font-weight: 500; text-align: center; display: none;">
-                            </div>
+                            <div id="form-result"></div>
                         </form>
                     </div>
                 </div>
@@ -241,13 +312,13 @@
     </footer>
 
     <a href="https://wa.me/56987663079?text=Hola,%20quisiera%20información%20sobre%20los%20servicios%20de%20traslado%20corporativo."
-        class="whatsapp-float" target="_blank">
-        <i class="fa-brands fa-whatsapp"></i>
+        class="whatsapp-float" target="_blank" aria-label="Contactar por WhatsApp">
+        <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
     </a>
 
     <a href="https://www.facebook.com/profile.php?id=61586112398593" class="facebook-float" target="_blank"
         aria-label="Visitar Facebook">
-        <i class="fa-brands fa-facebook-f"></i>
+        <i class="fa-brands fa-facebook-f" aria-hidden="true"></i>
     </a>
 
     <button class="music-float" id="music-toggle" type="button" aria-label="Activar o pausar música de fondo">
@@ -271,9 +342,9 @@
                 <h3>¡Mensaje Enviado!</h3>
                 <p>Nos pondremos en contacto a la brevedad.</p>
             </div>
-            <button class="coin-close-btn" id="coin-close-btn">
+            <button class="coin-close-btn" id="coin-close-btn" type="button">
                 <span>Continuar</span>
-                <i class="fa-solid fa-arrow-right"></i>
+                <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
             </button>
         </div>
     </div>
@@ -284,7 +355,7 @@
     </audio>
 
     <!-- Música de entrada / fondo -->
-    <audio id="page-audio" preload="auto" autoplay loop>
+    <audio id="page-audio" preload="auto" loop>
         <source src="Music/clavier-music-calm.mp3" type="audio/mpeg">
     </audio>
 
